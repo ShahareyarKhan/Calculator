@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using html, css and javascript </title>
+</head>
+<style>
+    body {
+        background-color: rgb(196, 189, 203);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .container {
+        background-color: rgb(207, 225, 225);
+        width: 30%;
+        margin: auto;
+        border: 6px solid black;
+        border-radius: 7px;
+    }
+
+    .row {
+        width: 80%;
+        margin: auto;
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        width: 25%;
+        margin: 2%;
+        padding: 15px 0px 15px 0px;
+        border: 2px solid rgb(0, 0, 0);
+        cursor: pointer;
+        border-radius: 3px;
+        font-weight: bold;
+    }
+
+    .row input {
+        width: 85%;
+        margin: 0px;
+        padding: 10px 44px;
+        border: 2px solid rgb(0, 0, 0);
+    }
+
+    button:hover {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<body>
+    <h1 class="text-center">Calculator</h1>
+    <div class="container">
+        <div class="row">
+            <input type="text" id="result">
+        </div>
+        <div class="row">
+            <button class="button">C</button>
+            <button class="button">%</button>
+            <button class="button">Del</button>
+            <button class="button">/</button>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">*</button>
+        </div>
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">-</button>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">+</button>
+        </div>
+        <div class="row">
+            <button class="button">00</button>
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button">=</button>
+        </div>
+    </div>
+    <script>
+        let string = "";
+        let buttons = document.querySelectorAll('.button');
+        Array.from(buttons).forEach((button) => {
+            button.addEventListener('click', (e) => {
+                if (e.target.innerHTML == '=') {
+                    string = eval(string);
+                    document.querySelector('input').value = string;
+                }
+                else if (e.target.innerHTML == 'C') {
+                    string = "";
+                    document.querySelector('input').value = string;
+                }
+                else if (e.target.innerHTML == 'Del') {
+                    string = Math.floor(string / 10);
+                    document.querySelector('input').value = string;
+                }
+                else {
+                    if (document.getElementById('result').value === '0' || document.getElementById('result').value === '00') {
+                        string = e.target.innerHTML;
+                        document.getElementById('result').value = string;
+                    }
+                    else {
+                        string = string + e.target.innerHTML;
+                        document.querySelector('input').value = string;
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
