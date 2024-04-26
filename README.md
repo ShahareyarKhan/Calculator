@@ -21,8 +21,6 @@ This project is a simple web-based calculator created using HTML, CSS, and JavaS
 - Feel free to modify the CSS styles to customize the appearance of the calculator.
 - Additional functionality such as memory functions or scientific calculations can be added through JavaScript modifications.
 
-## License:
-This project is open-source and available under the [license name or link]. 
 
 ## Support and Contribution:
-For any issues, suggestions, or contributions, please feel free to contact [Your Contact Information].
+For any issues, suggestions, or contributions, please feel free to contact shahareyar2003@gmail.com.
